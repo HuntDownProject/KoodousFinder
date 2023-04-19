@@ -16,6 +16,13 @@ Create a Koodous account and get your api key https://koodous.com/settings/devel
 
 ![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/assets/view.png "sample search")
 
+# Examples
+
+koodous.py --package-name "app: Brata AND package: com.brata" <br>
+koodous.py --package-name "package: com.google.android.videos AND trusted: true"<br>
+koodous.py --package-name "com.metasploit"<br>
+python3 koodous.py --app-name "WhatsApp MOD"<br>
+
 #TODO
 
 * Discord Integration
