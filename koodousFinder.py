@@ -4,7 +4,7 @@ import math
 
 
 api_endpoint = 'https://developer.koodous.com/apks/'
-query_params = {'search': 'com.itau'}
+query_params = {'search': 'com.brata'}
 
 # Set up headers with API key
 api_key = 'your api key here'
@@ -16,17 +16,14 @@ parser.add_argument('--package-name', type=str, help='Package name of the APK to
 parser.add_argument('--app-name', type=str, help='Name of the app to search for')
 args = parser.parse_args()
 
-# Set up query parameters
 query_params = {}
 if args.package_name:
     query_params['search'] = args.package_name
 if args.app_name:
     query_params['app'] = args.app_name
 
-# Send GET request to Koodous API with headers and query parameters
 response = requests.get(api_endpoint, params=query_params, headers=headers)
 
-# Print results
 if response.status_code == 200:
     results = response.json()['results']
     sha256_counts = {}
