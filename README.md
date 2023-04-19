@@ -10,7 +10,7 @@ Create a Koodous account and get your api key https://koodous.com/settings/devel
 |        Param        |          description                |
 |----------------|-------------------------------|
 | -h, --help     |`'Show this help message and exit'`            |
-|--package-name  |`"Package name of the APK to search for"`            |
+|--package-name  |`"General search for APK`s"`            |
 |--app-name      |`Name of the app to search for`|
 
 # Examples
