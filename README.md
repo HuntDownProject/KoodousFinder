@@ -11,7 +11,7 @@ A simple tool to allows users to search for and analyze android apps for potenti
 |--package-name  |`"Package name of the APK to search for"`            |
 |--app-name      |`Name of the app to search for`|
 
-![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/view.png "sample search")
+![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/assets/view.png "sample search")
 
 #TODO
 
