@@ -1,6 +1,9 @@
 # KoodousFinder
 A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities
 
+# Account and API Key
+Create a Koodus account and get your api key https://koodous.com/settings/developers
+
 
 # Arguments
   
