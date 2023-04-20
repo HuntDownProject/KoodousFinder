@@ -4,6 +4,10 @@ A simple tool to allows users to search for and analyze android apps for potenti
 # Account and API Key
 Create a Koodous account and get your api key https://koodous.com/settings/developers
 
+# Install
+
+$ pip install koodousfinder
+
 # Arguments
   
   
