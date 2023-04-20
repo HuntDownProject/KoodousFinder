@@ -6,6 +6,7 @@ authors = [
     "teixeira0xfffff <www@www.www>",
     "brlaw <www@www.www>",
 ]
+
 readme = "README.md"
 
 [tool.poetry.scripts]
@@ -13,7 +14,7 @@ koodousfinder = 'koodousfinder.console:run'
 
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.7"
 requests = "^2.28.2"
 keyring = "^23.13.1"
 
