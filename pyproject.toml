@@ -2,7 +2,8 @@
 name = "koodousfinder"
 version = "0.1.0"
 description = "A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities"
-authors = ["https://github.com/teixeira0xfffff"]
+authors = ["teixeira0xfffff <www@www.www>"]
+authors = ["Brlaw <www@www.www>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
