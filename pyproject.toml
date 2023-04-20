@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "koodousfinder"
+version = "0.1.0"
+description = "A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities"
+authors = ["https://github.com/teixeira0xfffff"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+koodousfinder = 'koodousfinder.console:run'
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.2"
+keyring = "^23.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
