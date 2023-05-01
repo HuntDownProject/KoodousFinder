@@ -25,7 +25,7 @@ koodous.py --package-name "com.metasploit"<br>
 python3 koodous.py --app-name "WhatsApp MOD"<br>
 
 
-![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/assets/sample%202.png "sample search for Brata Malware")
+![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/assets/view2.png "sample search for Brata Malware")
 
 # Modifiers for advanced search
 
