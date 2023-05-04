@@ -38,7 +38,30 @@ python3 koodous.py --app-name "WhatsApp MOD"<br>
 |Certificate         |`certificate:` |Searches the apps by their certificate. For example: cert: 60BBF1896747E313B240EE2A54679BB0CE4A5023 or certificate: 38A0F7D505FE18FEC64FBF343ECAAAF310DBD799.|
 
 More information: https://docs.koodous.com/apks.html. <br>
-#TODO
+
+# TODO
 
 * Discord Integration
 * Rulesets view
+
+# Development
+
+## Taskipy usage:
+
+To run the unit tests:
+
+```shell
+task test
+```
+
+To run the pylint tests:
+
+```shell
+task lint
+```
+
+To run the isort to sort the imports:
+
+```shell
+task sort
+```

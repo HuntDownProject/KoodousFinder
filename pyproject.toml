@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "koodousfinder"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities"
 authors = [
     "teixeira0xfffff <www@www.www>",
@@ -17,10 +17,13 @@ koodousfinder = 'koodousfinder.console:run'
 python = ">=3.7.2,<4.0"
 requests = "^2.28.2"
 keyring = "^23.13.1"
+pydantic = "^1.10.7"
 
 
 [tool.poetry.group.dev.dependencies]
 pylint = "^2.17.2"
+pytest = "^7.3.1"
+taskipy = "^1.10.4"
 
 [build-system]
 requires = ["poetry-core"]
@@ -39,3 +42,14 @@ disable = [
     "R0913", # (too-many-arguments)
     "W0105", # (pointless-string-statement)
 ]
+
+[tool.pytest.ini_options]
+addopts = "-v -s"
+testpaths = [
+    "tests"
+]
+
+[tool.taskipy.tasks]
+test = "python -m pytest tests/test_*.py"
+lint = "pylint tests src"
+sort = "isort src"
