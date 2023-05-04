@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "koodousfinder"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities"
 authors = [
     "teixeira0xfffff <www@www.www>",
     "brlaw <www@www.www>",
 ]
-
+repository = "https://github.com/teixeira0xfffff/KoodousFinder"
 readme = "README.md"
 
 [tool.poetry.scripts]
@@ -14,11 +14,42 @@ koodousfinder = 'koodousfinder.console:run'
 
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = ">=3.7.2,<4.0"
 requests = "^2.28.2"
 keyring = "^23.13.1"
+pydantic = "^1.10.7"
 
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17.2"
+pytest = "^7.3.1"
+taskipy = "^1.10.4"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint]
+max-line-length = 88
+disable = [
+    "C0103", # (invalid-name)
+    "C0115", # (missing-class-docstring)
+    "C0116", # (missing-function-docstring)
+    "R0903", # (too-few-public-methods)
+    "R0913", # (too-many-arguments)
+    "W0105", # (pointless-string-statement)
+]
+
+[tool.pytest.ini_options]
+addopts = "-v -s"
+testpaths = [
+    "tests"
+]
+
+[tool.taskipy.tasks]
+test = "python -m pytest tests/test_*.py"
+lint = "pylint tests src"
+sort = "isort src"
