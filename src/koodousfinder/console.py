@@ -1,13 +1,11 @@
 """This is the main module for koodousfinder application."""
-
-
 import argparse
 import getpass
 import math
 from typing import List, Optional
 
 import keyring
-from stix2 import Bundle, Grouping, Indicator
+from stix2 import Bundle, Grouping, Indicator, File, Relationship
 
 from .client import Client
 from .response import Response
@@ -75,6 +73,12 @@ def show_stix_results(search_used: str, response: List[Response]):
     list_indicators = []
     for result in response:
         description = f"{result.app} => {result.package_name}"
+        stix_file = File(
+            name=description,
+            hashes={ "SHA-256" : result.sha256},
+            size=result.size
+        )
+        list_indicators.append(stix_file)
         indicator = Indicator(
             name=description,
             pattern=f"[file:hashes.sha256 = '{result.sha256}']",
@@ -87,6 +91,12 @@ def show_stix_results(search_used: str, response: List[Response]):
             ]
         )
         list_indicators.append(indicator)
+        relationship = Relationship(
+            source_ref=indicator.id,
+            relationship_type="based-on",
+            target_ref=stix_file.id
+        )
+        list_indicators.append(relationship)
 
     grouping = Grouping(
         name=f"Hunting for {search_used}",

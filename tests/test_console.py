@@ -30,13 +30,14 @@ def test_show_stix_results(mocked_print) -> None:
         search_used=search_used,
         response=[response]
     )
-
     output = json.loads(mocked_print.call_args.args[0])
     assert output.get('id')
     assert output.get('type') == "bundle"
     for obj in output.get('objects'):
         assert obj.get("id")
-        assert search_used in obj.get("name")
+        # relationship object doesn't has name
+        if obj.get("name"):
+            assert search_used in obj.get("name")
 
 @patch('builtins.print')
 def test_show_results(mocked_print) -> None:
