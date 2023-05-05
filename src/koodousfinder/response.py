@@ -10,6 +10,7 @@ class Response(BaseModel):
 
     app: Optional[str]
     package_name: Optional[str]
+    url: Optional[str]
     version: Optional[str]
     size: Optional[int]
     sha256: Optional[str]
