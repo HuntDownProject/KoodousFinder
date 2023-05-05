@@ -5,7 +5,7 @@ import math
 from typing import List, Optional
 
 import keyring
-from stix2 import Bundle, Grouping, Indicator, File, Relationship
+from stix2 import Bundle, File, Grouping, Indicator, Relationship
 
 from .client import Client
 from .response import Response
