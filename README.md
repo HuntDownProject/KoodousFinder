@@ -16,6 +16,7 @@ $ pip install koodousfinder
 | -h, --help     |`'Show this help message and exit'`            |
 |--package-name  |`"General search for APK`s"`            |
 |--app-name      |`Name of the app to search for`|
+|--stix      |`Output for Structured Threat Information Expression (STIX™) format`|
 
 # Examples
 
