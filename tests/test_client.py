@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 import pytest
 
-from koodousfinder import Client
+from koodousfinder.client import Client
 from koodousfinder.response import Response
 
 
