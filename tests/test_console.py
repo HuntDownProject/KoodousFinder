@@ -47,12 +47,13 @@ def test_show_results(mocked_print) -> None:
     show_results(
         response=[response]
     )
+    sha256 = '2efc944bf9a52f3096acb26307904e8a27d8f4c79b62a18e8e41aa99ddae505a'
     assert mocked_print.mock_calls == [
         call('App Name: Modulo Guardião'),
         call(f'Package Name: {search_used}'),
         call('App Version: '),
         call('Size: 0.0 MB'),
-        call('SHA256: \x1b[32m2efc944bf9a52f3096acb26307904e8a27d8f4c79b62a18e8e41aa99ddae505a\x1b[0m'),  # pylint: disable=line-too-long
+        call(f'SHA256: \x1b[32m{sha256}\x1b[0m'),
         call('URL: http://test/'),
         call('--------------------------------------------------')
     ]

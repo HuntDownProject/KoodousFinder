@@ -13,20 +13,91 @@ $ pip install koodousfinder
   
 |        Param        |          description                |
 |----------------|-------------------------------|
-| -h, --help     |`'Show this help message and exit'`            |
-|--package-name  |`"General search for APK`s"`            |
+| -h, --help     |`'Show this help message and exit'`           |
+|--package-name  |`"General search for APK's"`            |
 |--app-name      |`Name of the app to search for`|
 |--stix      |`Output for Structured Threat Information Expression (STIX™) format`|
 
 # Examples
 
-koodous.py --package-name "app: Brata AND package: com.brata" <br>
-koodous.py --package-name "package: com.google.android.videos AND trusted: true"<br>
-koodous.py --package-name "com.metasploit"<br>
-python3 koodous.py --app-name "WhatsApp MOD"<br>
-
+```
+$ koodousfinder --package-name "app: Brata AND package: com.brata"
+$ koodousfinder --package-name "package: com.google.android.videos AND trusted: true"
+$ koodousfinder --package-name "com.metasploit"
+$ koodousfinder --app-name "WhatsApp MOD"
+```
 
 ![alt text for screen readers](https://raw.githubusercontent.com/teixeira0xfffff/KoodousFinder/main/assets/view2.png "sample search for Brata Malware")
+
+
+Getting the output using `--stix`, running:
+
+```
+$ koodousfinder --package-name "com.ymwhatsapp" --stix
+```
+
+Will produce a output like:
+
+```json
+{
+  "type": "bundle",
+  "id": "bundle--d6f5709d-76ed-4f3f-a7cb-0bff0ad4adb5",
+  "objects": [
+    {
+      "type": "file",
+      "spec_version": "2.1",
+      "id": "file--1bcdb4b2-c520-5d5e-a7d7-2615f6b14de3",
+      "hashes": {
+        "SHA-256": "e1d1f716097fc10f3f739d5e98d24d181c450ef2ddee799806530f04d699e8be"
+      },
+      "size": 57578320,
+      "name": "WhatsApp => com.ymwhatsapp"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--83abdc4a-aea3-4c16-ba34-0b45eb67417b",
+      "created": "2023-06-21T01:57:24.294625Z",
+      "modified": "2023-06-21T01:57:24.294625Z",
+      "name": "WhatsApp => com.ymwhatsapp",
+      "pattern": "[file:hashes.sha256 = 'e1d1f716097fc10f3f739d5e98d24d181c450ef2ddee799806530f04d699e8be']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1",
+      "valid_from": "2023-06-21T01:57:24.294625Z",
+      "external_references": [
+        {
+          "source_name": "koodous.com",
+          "url": "https://developer.koodous.com/apks/e1d1f716097fc10f3f739d5e98d24d181c450ef2ddee799806530f04d699e8be/"
+        }
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--76d6b634-ba0f-4378-ad69-14f93d8022e3",
+      "created": "2023-06-21T01:57:24.310246Z",
+      "modified": "2023-06-21T01:57:24.310246Z",
+      "relationship_type": "based-on",
+      "source_ref": "indicator--83abdc4a-aea3-4c16-ba34-0b45eb67417b",
+      "target_ref": "file--1bcdb4b2-c520-5d5e-a7d7-2615f6b14de3"
+    },
+    {
+      "type": "grouping",
+      "spec_version": "2.1",
+      "id": "grouping--2b73de17-1a0b-46bf-aca2-f910873f886c",
+      "created": "2023-06-21T01:57:24.363709Z",
+      "modified": "2023-06-21T01:57:24.363709Z",
+      "name": "Hunting for com.ymwhatsapp",
+      "context": "Koodous search used: com.ymwhatsapp",
+      "object_refs": [
+        "file--1bcdb4b2-c520-5d5e-a7d7-2615f6b14de3",
+        "indicator--83abdc4a-aea3-4c16-ba34-0b45eb67417b",
+        "relationship--76d6b634-ba0f-4378-ad69-14f93d8022e3"
+      ]
+    }
+  ]
+}
+```
 
 # Modifiers for advanced search
 
@@ -44,25 +115,3 @@ More information: https://docs.koodous.com/apks.html. <br>
 
 * Discord Integration
 * Rulesets view
-
-# Development
-
-## Taskipy usage:
-
-To run the unit tests:
-
-```shell
-task test
-```
-
-To run the pylint tests:
-
-```shell
-task lint
-```
-
-To run the isort to sort the imports:
-
-```shell
-task sort
-```
