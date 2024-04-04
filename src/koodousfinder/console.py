@@ -6,7 +6,7 @@ from typing import List, Optional
 
 import keyring
 from stix2 import Bundle, File, Grouping, Indicator, Relationship
-
+from loguru import logger
 from .client import Client
 from .response import Response
 
@@ -58,7 +58,7 @@ def run():
             )
             search_used = args.app_name
     except Exception as ex:  # pylint: disable=broad-exception-caught)
-        print(ex)
+        logger.error(ex)
         return
 
     if args.stix:
