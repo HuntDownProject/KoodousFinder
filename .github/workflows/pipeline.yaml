@@ -22,7 +22,7 @@ jobs:
         run: poetry install
       - name: Test
         run: |
-          poetry run ruff check --format=github .
+          poetry run ruff check --output=format=github .
           poetry run py.test tests/ --cov=src/ --color=yes
       - name: Build
         run: poetry build
