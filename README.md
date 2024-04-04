@@ -1,6 +1,8 @@
 # KoodousFinder
 A simple tool to allows users to search for and analyze android apps for potential security threats and vulnerabilities
 
+[![Test and Build](https://github.com/HuntDownProject/KoodousFinder/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/HuntDownProject/KoodousFinder/actions/workflows/pipeline.yaml)
+
 # Account and API Key
 Create a Koodous account and get your api key https://koodous.com/settings/developers
 
