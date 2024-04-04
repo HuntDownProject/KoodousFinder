@@ -16,11 +16,11 @@ koodousfinder = 'koodousfinder.console:run'
 
 
 [tool.poetry.dependencies]
-python = ">=3.7.2,<3.12"
-requests = ">=2.31.0"
-keyring = ">=23.13.1"
-pydantic = ">=1.10.9"
-stix2 = ">=3.0.1"
+python = ">=3.7.2,<4"
+requests = "^2.31.0"
+keyring = "^23.13.1"
+pydantic = "^1.10.9"
+stix2 = "^3.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.3.1"
